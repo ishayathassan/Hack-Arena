@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Practice{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href ="{% static 'css/contest_leaderboard.css'%}">
+{% endblock %}
+{% block content %}
+    <!--- <div id="timer">
+        <h1>Time Remaining: <span id="time">2:00:59</span></h1>
+    </div>
+    --->
+    <div id="navigation">
+        <span id="leaderboard"><a href="{% url 'contest_leaderboard' contest.id%}">Leaderboard</a></span>
+        <span id="problemset"><a href="{% url 'contest_problemset' contest.id%}">Problem Set</a></span>
+        <span id="problemset"><a href="{% url 'contest_submissions' contest.id%}">Submissions</a></span>
+    </div>
+    <div id="contest">
+        <div id="list-header">
+            <ul>
+                <li style=""><h2>#</h2></li>
+                <li style=""><h2>Name</h2></li>
+                <li style=""><h2>Total</h2></li>
+                <li><h2>A</h2></li>
+                <li><h2>B</h2></li>
+                <li><h2>C</h2></li>
+            </ul>
+        </div>
+        
+        {% for participant in participants %}
+            <div class="contestent-row">
+                <ul>
+                    <li style="">{{ participant.rank }}</li>
+                    <li>{{ participant.user.username }}</li>
+                    <li>{{ participant.score }}</li>
+                    <li>
+                        {% if participant.problem_a %}
+                            100 <!-- Replace with actual points for problem A -->
+                        {% else %}
+                            <!-- Leave this blank if not solved -->
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if participant.problem_b %}
+                            100 <!-- Replace with actual points for problem B -->
+                        {% else %}
+                            <!-- Leave this blank if not solved -->
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if participant.problem_c %}
+                            100 <!-- Replace with actual points for problem C -->
+                        {% else %}
+                            <!-- Leave this blank if not solved -->
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock%}

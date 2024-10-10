@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Practice{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/contest_submissions.css'%}">
+{% endblock %}
+{% block content %}
+    <div id="contest-banner"></div>
+    <!--- <div id="timer">
+        <h1>Time Remaining: <span id="time">2:00:59</span></h1>
+    </div>
+    --->
+    <div id="navigation">
+        <span id="leaderboard"><a href="{% url 'contest_leaderboard' contest.id%}">Leaderboard</a></span>
+        <span id="problemset"><a href="{% url 'contest_problemset' contest.id%}">Problem Set</a></span>
+        <span id="problemset"><a href="{% url 'contest_submissions' contest.id%}">Submissions</a></span>
+    </div>
+    <div id="submission-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Submission ID</th>
+                    <th>Problem Name</th>
+                    <th>Language</th>
+                    <th>When</th>
+                    <th>Verdict</th>
+                    <th>Time</th>
+                    <th>Memory</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for submission in submissions %}
+                    <tr>
+                        <td>{{ submission.submission_id }}</td>
+                        <td>{{ submission.problem.problem_name }}</td>
+
+                        <td>{{ submission.language }}</td>
+                        <td>{{ submission.submitted_at }}</td>
+                        <td>{{ submission.status }}</td>
+                        <td>{{ submission.execution_time }} ms</td>
+                        <td>{{ submission.memory_used }} mb</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock%}

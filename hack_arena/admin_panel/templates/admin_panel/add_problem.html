@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Practice Problem</title>
+    <link rel="stylesheet" href="{% static 'css/add_problem.css' %}"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div id="practice-problem-container">
+        <h1>Create a Practice Problem</h1>
+
+        <form id="practice-problem-form" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="problem-name">Problem Name:</label>
+                <input type="text" id="problem-name" name="problem_name" placeholder="Enter problem name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="problem-description">Description:</label>
+                <textarea id="problem-description" name="problem_description" placeholder="Enter problem description" rows="6" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="difficulty-level">Difficulty Level:</label>
+                <select id="difficulty-level" name="difficulty_level" required>
+                    <option value="">Select difficulty</option>
+                    <option value="easy">easy</option>
+                    <option value="medium">medium</option>
+                    <option value="hard">hard</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="problem-type">Problem Type:</label>
+                <select id="problem-type" name="problem_type" required>
+                    <option value="">Select problem type</option>
+                    <option value="strings">strings</option>
+                    <option value="math">math</option>
+                    <option value="dynamic_programming">dynamic programming</option>
+                    <option value="brute_force">brute force</option>
+                    <option value="graph">graph</option>
+                    <option value="greedy">greedy</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="input-format">Input Format:</label>
+                <textarea id="input-format" name="input_format" placeholder="Enter input format" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="output-format">Output Format:</label>
+                <textarea id="output-format" name="output_format" placeholder="Enter output format" rows="4" required></textarea>
+            </div>
+
+            <h2>Test Cases</h2>
+
+            <div class="test-case">
+                <label for="testcase1-input">Test Case 1 Input:</label>
+                <textarea id="testcase1-input" name="testcase1_input" placeholder="Enter test case input" rows="3" required></textarea>
+                <label for="testcase1-output">Test Case 1 Output:</label>
+                <textarea id="testcase1-output" name="testcase1_output" placeholder="Enter test case output" rows="3" required></textarea>
+            </div>
+
+            <div class="test-case">
+                <label for="testcase2-input">Test Case 2 Input:</label>
+                <textarea id="testcase2-input" name="testcase2_input" placeholder="Enter test case input" rows="3" required></textarea>
+                <label for="testcase2-output">Test Case 2 Output:</label>
+                <textarea id="testcase2-output" name="testcase2_output" placeholder="Enter test case output" rows="3" required></textarea>
+            </div>
+
+            <div class="test-case">
+                <label for="testcase3-input">Test Case 3 Input:</label>
+                <textarea id="testcase3-input" name="testcase3_input" placeholder="Enter test case input" rows="3" required></textarea>
+                <label for="testcase3-output">Test Case 3 Output:</label>
+                <textarea id="testcase3-output" name="testcase3_output" placeholder="Enter test case output" rows="3" required></textarea>
+            </div>
+             <div class="form-group">
+                <label for="time-limit">Time Limit (in ms):</label>
+                <input type="number" id="time-limit" name="time_limit" placeholder="Enter time limit in milliseconds" required>
+            </div>
+
+            <div class="form-group">
+                <label for="memory-limit">Memory Limit (in MB):</label>
+                <input type="number" id="memory-limit" name="memory_limit" placeholder="Enter memory limit in megabytes" required>
+            </div>
+            <button type="submit" class="btn">Create Problem</button>
+        </form>
+    </div>
+</body>
+</html>

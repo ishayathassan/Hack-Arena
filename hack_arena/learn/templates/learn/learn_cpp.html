@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Learn{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/learn_cpp.css' %}">
+{% endblock %}
+
+{% block content %}
+    
+      <div id="topic">
+        <p>Learn C++</p>
+      </div>
+
+      <div id="des1">
+        <h3>What is C++?</h3>
+
+        <p>
+            C++ is a most popular cross-platform programming language which is used to create high-performance applications and software like OS, Games, E-commerce software, etc. It was developed by Bjarne Stroustrup, as an extension of C language. C++ gives a high level of control over system resources and memory.
+        </p>
+        <h3>Why Learn C++?</h3>
+        <ul>
+            <li>C++ is one of the most used and popular programming languages.</li>
+            <li>C++ is used in making operating systems, embedded systems, and Graphical User Interfaces.</li>
+            <li>It is an object-oriented programming language that implements all the OOPs concepts such as Abstraction, Encapsulation, and Inheritance, which gives a clear structure to programs and allows code to be reused, lowering development costs and providing security.</li>
+            <li>It is portable and can be used to create applications that can be adapted to multiple platforms.</li>
+        </ul>
+        </div>
+
+        <div class="des2">
+            <h3>Your First C++ Program</h3>
+            <p> The following program displays <b>Hello, World!</b> on the screen.</p>
+            <img src="img2/Screenshot 2024-07-09 232628 1.png" alt="">
+            <h3>Output</h3>
+            <img src="img2/Screenshot 2024-07-09 233337 1.png" alt="">
+        </div>
+
+        <div class="des2">
+            <h3>C++ if, if...else</h3>
+            <p>In computer programming, we use the if...else statement to run one block of code under certain conditions and another block of code under different conditions.
+                For example, assigning grades (A, B, C) based on marks obtained by a student.</p>
+            <ol>
+                <li>if the percentage is above 90, assign grade A</li>
+                <li>if the percentage is above 75, assign grade B</li>
+                <li>if the percentage is above65, assign gradeC</li>
+            </ol>
+            <h3>Syntax</h3>
+            <img src="img2/if else syntax.png" alt="">
+            <h3>Example</h3>
+            <img src="img2/if else example.png" alt="">
+            <h3>Output</h3>
+            <img src="img2/if else output.png" alt="">
+        </div>
+
+        <div class="des2">
+            <h3>C++ Arrays</h3>
+            <p>n C++, an array is a variable that can store multiple values of the same type. For example,
+                Suppose a class has 27 students, and we need to store all their grades. Instead of creating 27 separate variables, we can simply create an array:
+                double grade[27];
+                Here, grade is an array that can hold a maximum of 27 elements of double type.
+                In C++, the size and type of arrays cannot be changed after its declaration.
+                </p>
+                <h3>C++ Array Initialization</h3>
+                <p>In C++, it's possible to initialize an array during declaration. For example,</p>
+                <img src="img2/array ini.png" alt="">
+                <img src="img2/array white.png" alt="">
+                <h3>How to Insert and Print Array Elements?</h3>
+                <img src="img2/array ex.png" alt="">
+                <h3>Output</h3>
+                <img src="img2/array output.png" alt="">
+        </div>
+
+        <button type="button" id="btn">Next Page</button>
+    
+        <footer id="footer">
+            <p style="color: white;">Copyright © 2024 HackArena. All rights reserved</p>
+          </footer>
+      
+
+{% endblock %}

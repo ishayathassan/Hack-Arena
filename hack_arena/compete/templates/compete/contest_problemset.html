@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Practice{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/contest_leaderboard.css'%}">
+{% endblock %}
+{% block content %}
+    <div id="contest-banner"></div>
+    <!--- <div id="timer">
+        <h1>Time Remaining: <span id="time">2:00:59</span></h1>
+    </div>
+    --->
+    <div id="navigation">
+        <span id="leaderboard"><a href="{% url 'contest_leaderboard' contest.id%}">Leaderboard</a></span>
+        <span id="problemset"><a href="{% url 'contest_problemset' contest.id%}">Problem Set</a></span>
+        <span id="problemset"><a href="{% url 'contest_submissions' contest.id%}">Submissions</a></span>
+    </div>
+    <div id="contest">
+        <div id="list-header">
+            <ul>
+                <li style=""><h2>#</h2></li>
+                <li style=""><h2>Problem</h2></li>
+                <li style=""><h2>Points</h2></li>
+            </ul>
+        </div>
+        {% for problem in problemset %}
+            <div class="contestent-row">
+                <ul>
+                    <li><a href="{% url 'contest_problem' contest.id problem.problem_id %}">{{ problem.problem_num }}</a></li>
+                    <li>{{ problem.problem_name }}</li>
+                    <li>{{ problem.point }}</li>
+                </ul>
+            </div>
+        {% endfor %}
+        
+{% endblock%}

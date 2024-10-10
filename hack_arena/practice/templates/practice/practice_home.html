@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Practice{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/practice_home.css'%}">
+
+{% endblock %}
+{% block content %}
+<div id="topics-bar">
+    <ul>
+        <li><a href="?search=String">String</a></li>
+        <li><a href="?search=Greedy">Greedy</a></li>
+        <li><a href="?search=Dynamic Programming">Dynamic Programming</a></li>
+        <li><a href="?search=Sorting">Sorting</a></li>
+        <li><a href="?search=Binary Search Tree">Binary Search Tree</a></li>
+        <li><a href="?search=Graph">Graph</a></li>
+        <li><a href="?search=Hashing">Hashing</a></li>
+        <li><a href="?search=Implementation">Implementation</a></li>
+        <li><a href="?search=Brute Force">Brute Force</a></li>
+    </ul>
+</div>
+
+<div id="filter-bar">
+    <span id="search-bar">
+        <form method="GET" action="">
+            <input type="text" name="search" placeholder="Search" value="{{ request.GET.search }}">
+            <i id="search-icon" class="fas fa-search"></i>
+            <select name="difficulty" id="difficulty" onchange="this.form.submit()">
+                <option value="">All Difficulties</option>
+                <option value="easy" {% if request.GET.difficulty == "easy" %}selected{% endif %}>Easy</option>
+                <option value="medium" {% if request.GET.difficulty == "medium" %}selected{% endif %}>Medium</option>
+                <option value="hard" {% if request.GET.difficulty == "hard" %}selected{% endif %}>Hard</option>
+            </select>
+        </form>
+    </span>
+</div>
+<div id="problem-list">
+    <div id="list-header">
+        <ul>
+            <li><h2>Title</h2></li>
+            <li><h2>Difficulty</h2></li>
+            <li><h2>Tags</h2></li>
+        </ul>
+    </div>
+    {% for problem in problems %}
+        <div class="problem-row">
+            <ul>
+                <li><a href="{% url 'problem_home' problem.problem_id %}">{{ problem.problem_name }}</a></li>
+                <li>{{ problem.difficulty_level }}</li>
+                <li>
+                    {% for tag in problem.tags.all %}
+                        <span>{{ tag.tag }}{% if not forloop.last %} | {% endif %}</span>
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+    {% endfor %}
+    
+</div>
+{% endblock %}

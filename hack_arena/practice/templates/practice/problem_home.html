@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Problem 1{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/problem_home.css'%}">
+
+{% endblock %}
+{% block content %}
+<div id="content" style="">
+    <div id="topbar">
+        <ul>
+            <li class="left"><a href="{% url 'problem_home' problem.problem_id %}">Statement</a></li>
+            <li class="left"><a href="{% url 'submission' problem.problem_id %}">Submissions</a></li>
+            <li class="right">
+                <form id="code-form" method="POST">
+                    {% csrf_token %}
+                    <!-- <select name="select-lang" id="select-lang">
+                        <option value="cpp">C++</option>
+                        <option value="java">Java</option>
+                        <option value="python">Python</option>
+                    </select>
+                    <textarea name="code" id="code" style="display:none;"></textarea>
+                    <button type="button" id="submit-btn">Submit</button> --->
+                    <input type="hidden" name="code" id="code">
+                    <input id='language' type="text" name="language" value="C++" readonly>
+                    <button id="submit-btn" type="button">Submit</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+    <div id="lower">
+        <div id="statement">
+            <h1 id="problem-title">{{ problem.problem_name }}</h1>
+            <div style="margin-bottom:20px; font-size:14px; font-style: italic">
+            <div style="font-weight:bold">Time Limit: <span style="font-weight:400; margin-left:6px;">{{problem.time_limit}} ms</span></div>
+            <div style="font-weight:bold">Memory Limit: <span style="font-weight:400; margin-left:6px;">{{problem.memory_limit}} mb</span></div>
+            </div>
+            <p id=" ">{{ problem.problem_statement }}</p>
+            <h4>Input Format</h4>
+            <p>{{ problem.input_statement }}</p>
+            <h4>Output Format</h4>
+            <p>{{ problem.output_statement }}</p>
+            <div id="io">
+                <div id="io-heading">
+                    <h5 id="heading-input">Input</h5>
+                    <h5 id="heading-output">Output</h5>
+                </div>
+                <div id="io-contents">
+                    <span id="problem_inputs">
+                        {% for input in problem.inputs.all|slice:":3" %}
+                            <p>{{ input.input_data }}</p>
+                        {% endfor %}
+                          
+                    </span>
+                    <span id="problem_outputs">
+                        {% for input in problem.inputs.all|slice:":3" %}
+                            <p>{{ input.output_data }}</p>
+                        {% endfor %}  
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="editor"></div>
+    </div>
+</div>
+
+
+<script src="{% static '/ace-builds/src-noconflict/ace.js' %}" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/c_cpp");
+    editor.setFontSize(16);
+
+    // Event listener for "Submit" button
+    document.getElementById('submit-btn').addEventListener('click', function () {
+        var code = editor.getValue();
+        document.getElementById('code').value = code;
+        document.getElementById('code-form').submit();
+    });
+</script>
+{% endblock %}

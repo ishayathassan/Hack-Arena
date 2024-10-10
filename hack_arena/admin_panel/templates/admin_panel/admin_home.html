@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/admin_home.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <title>HackArena</title>
+      </head>
+      
+<body>
+    <nav id="nav1">
+        <div id="nav_left">
+          <a href="#">
+            <h3>HackArena</h3>
+          </a>
+        </div>
+        <div id="nav_mid">
+          <div id="nav_right">
+            <a href="#" class="title1">User Name</a>   
+          </div>
+        </div>
+       
+    </nav>
+
+
+    <div id="container">
+        <div id="profile_card">
+            <div id="profile_pic"></div>
+            <div id="info">
+                <p>Name</p>
+                <p>ID: 011221</p>
+            </div>
+        </div>
+    
+        <div id="right_btns">
+            <a href="{% url 'add_contest' %}" type="button" class="btn">Contest</a>
+            <a href="{% url 'add_problem' %}" typre="button" class="btn">Practice</a>
+        </div>
+    </div>
+    
+
+</body>
+</html>

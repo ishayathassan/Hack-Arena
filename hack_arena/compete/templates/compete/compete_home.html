@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Practice{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/compete_home.css'%}">
+{% endblock %}
+{% block content %}
+      <div id="contest">
+        <h1 class="open_text">Contest</h1>
+        <div id="event_card_container">
+          {% for contest in contests %}
+            <div class="card2">
+              <div class="card2_left">
+                <img src="{% static 'img/gold-trophy-cartoon-illustration-isolated-object-free-vector-removebg-preview 1.png' %}" alt="">
+                <h2>{{ contest.name }}</h2>
+              </div>
+              <div class="card2_right">
+                <div class="date-time card2_right_seg" style="margin-top: 16px; ">
+                    <h4 style="color:black">Date: <span style="color: #4f6d9c; margin-left:5px;">{{ contest.start_time|date:"d M, Y" }}</span></h4>
+                    <h4 style="margin-top: 10px; color:black;">Time: <span style="color: #4f6d9c; margin-left:5px;">{{ contest.start_time|date:"g:iA" }}</span></h4>
+                </div>
+                <div class="card2_right_seg">
+                  <p>Duration:</p>
+                  <h4>
+                    {{ contest.formatted_duration }}
+                  </h4>
+                </div>
+                <button type="button" class="btn4">
+                  <h2><a href="{% url 'compete_login' contest.id %}">Enter ></a></h2>
+                </button>
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+    </div>
+
+    <!--<footer id="footer">
+        <p>Copyright © 2024 HackArena. All rights reserved</p>
+      </footer>
+    --->
+{% endblock %}

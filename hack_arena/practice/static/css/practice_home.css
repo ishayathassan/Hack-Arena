@@ -1,0 +1,112 @@
+* {
+  font-family: Poppins;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+#topics-bar {
+  background-color: #252c37;
+  width: 73vw;
+  height: 60px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  margin-top: 50px;
+  margin-left: 280px;
+  margin-bottom: 0px;
+}
+#topics-bar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 50px;
+  padding-left: 40px;
+  padding-top: 15px;
+}
+#search-bar {
+  position: relative; /* To position the icon relative to the input */
+  display: inline-block; /* Keep the input and icon aligned */
+  margin-top: 0px;
+  margin-left: 280px;
+}
+
+#search-bar input {
+  background-color: #252c37;
+  color: #fff;
+  width: 350px; /* Adjust the width of the input */
+  padding: 10px 10px 10px 35px; /* Add padding to make space for the icon */
+  border: 1px solid #ccc; /* Optional: Styling for the border */
+  border-radius: 5px; /* Optional: Rounded corners */
+  outline: none;
+  font-size: 16px;
+}
+
+#search-icon {
+  position: absolute; /* Position the icon inside the input */
+  top: 50%; /* Center the icon vertically */
+  left: 10px; /* Place the icon on the left side */
+  transform: translateY(-50%); /* Ensure vertical centering */
+  color: #999; /* Icon color */
+  font-size: 18px; /* Icon size */
+  pointer-events: none; /* Prevent the icon from blocking clicks on input */
+}
+#difficulty {
+  width: 200px;
+  height: 47px;
+  background-color: #252c37;
+  color: #fff;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+#problem-list {
+  background-color: #dae1ec;
+  width: 73vw;
+  margin-left: 280px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  flex-basis: 25%;
+  color: #000000;
+}
+#problem-list a {
+  color: #000000;
+}
+#list-header {
+  padding-top: 20px;
+}
+#list-header ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Use Flexbox to align items horizontally */
+}
+#list-header li {
+  flex: 1; /* Distribute space equally between headings */
+  text-align: center; /* Center-align the text */
+  padding: 10px 0; /* Add some padding inside each heading */
+}
+#list-header h2 {
+  font-weight: 500;
+}
+.problem-row {
+  margin-top: 10px;
+}
+.problem-row ul {
+  display: flex;
+}
+
+.problem-row li {
+  flex: 1;
+  text-align: center;
+  padding: 15px 0;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+.problem-row li:last-child {
+  margin-bottom: 15px;
+}
+.problem-row:nth-child(even) {
+  background-color: #f0f0f0;
+}

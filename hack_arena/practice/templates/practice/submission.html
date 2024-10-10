@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Problem 1{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/submission.css'%}">
+
+{% endblock %}
+{% block content %}
+<div id="content">
+    <div id="topbar">
+        <ul>
+            <li class="left"><a href="{% url 'problem_home' problem.problem_id %}">Statement</a></li>
+            <li class="left"><a href="{% url 'submission' problem.problem_id %}">Submissions</a></li>
+        </ul>
+    </div>
+    <div id="submission_heading">
+    <table>
+        <thead>
+            <tr>
+                <th>Submission ID</th>
+                <th>Language</th>
+                <th>When</th>
+                <th>Verdict</th>
+                <th>Time</th>
+                <th>Memory</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for submission in user_submissions %}
+                <tr>
+                    <td>{{ submission.submission_id }}</td>
+                    <td>{{ submission.language }}</td>
+                    <td>{{ submission.submitted_at }}</td>
+                    <td>{{ submission.status }}</td>
+                    <td>{{ submission.execution_time }} ms</td>
+                    <td>{{ submission.memory_used }} mb</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+{% endblock %}

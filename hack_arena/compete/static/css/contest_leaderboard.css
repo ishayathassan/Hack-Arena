@@ -1,0 +1,135 @@
+li {
+  list-style-type: none;
+}
+#event_card_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Adds space between the cards */
+  width: 75%; /* Adjust this width based on your layout needs */
+  margin: 0 auto; /* Center the container */
+  margin-top: 350px; /* Add space above the cards */
+}
+
+.card2 {
+  background-color: #dae1ec;
+  border-radius: 30px;
+  height: 140px;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 74px;
+  display: flex;
+}
+
+.card2_left {
+  width: 50%;
+  display: flex;
+}
+
+.card2_left img {
+  margin-left: 15px;
+  width: 100px;
+  height: 100px;
+}
+
+.card2_left h2 {
+  margin: auto;
+  color: black;
+}
+
+.card2_right {
+  width: 50%;
+  display: flex;
+}
+
+.card2_right_seg {
+  width: 33%;
+}
+.card2_right_seg p {
+  color: black;
+  margin: 25px 0 0 40px;
+}
+.card2_right_seg h4 {
+  margin: 10px 0 0 40px;
+  color: #4f6d9c;
+}
+
+.btn4 {
+  border-color: white;
+  border-radius: 30px;
+  height: 56px;
+  width: 119px;
+  background-color: white;
+  margin: 25px 0px 0px 0px;
+}
+
+.btn4 h2 {
+  color: #23395b;
+}
+#timer {
+  margin-left: 280px;
+  margin-top: 60px;
+  color: #4f6d9c;
+  font-size: 22px;
+}
+#time {
+  color: #e7415f;
+}
+
+#navigation {
+  margin-left: 280px;
+  margin-top: 60px;
+}
+#navigation span {
+  background-color: #dae1ec;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 20px;
+}
+#navigation a {
+  text-decoration: none;
+}
+#contest {
+  background-color: #dae1ec;
+  width: 73vw;
+  margin-left: 280px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-radius: 25px;
+  flex-basis: 25%;
+}
+#list-header {
+  padding-top: 20px;
+}
+#list-header ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Use Flexbox to align items horizontally */
+}
+#list-header li {
+  flex: 1; /* Distribute space equally between headings */
+  text-align: center; /* Center-align the text */
+  padding: 10px 0; /* Add some padding inside each heading */
+}
+#list-header h2 {
+  font-weight: 500;
+}
+.contestent-row {
+  margin-top: 10px;
+}
+.contestent-row ul {
+  display: flex;
+}
+
+.contestent-row li {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+}
+.contestent-row:nth-child(even) {
+  background-color: #f0f0f0;
+}

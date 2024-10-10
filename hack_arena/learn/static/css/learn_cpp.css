@@ -1,0 +1,89 @@
+.title {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px; /* Horizontal space between links */
+  padding: 10px;
+  display: inline-block; /* Ensures proper padding and background */
+}
+
+.title1 {
+  color: white;
+  text-decoration: none;
+  margin-left: 40px; /* Horizontal space between links */
+}
+
+#nav_right {
+  margin-left: 50px;
+  float: right;
+}
+
+#topic {
+  height: 100px;
+  width: 70vw;
+  background-color: #dae1ec;
+  margin-top: 20px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#topic p {
+  color: #0a254f;
+  font-weight: bolder;
+  font-size: 36px;
+}
+
+#des1 {
+  background-color: #dae1ec;
+  width: 70vw;
+  padding: 30px;
+  margin-top: 20px;
+  margin-left: auto;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.des2 {
+  background-color: #dae1ec;
+  padding: 30px;
+  margin: 30px;
+  border-radius: 30px;
+}
+
+li {
+  margin-left: 20px;
+}
+
+h3 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#btn {
+  border: none;
+  border-radius: 60px;
+  height: 40px;
+  width: 110px;
+  background-color: #23395b;
+  margin: 70px auto; /* Center horizontally */
+  display: block; /* Make it a block element */
+  color: white;
+}
+
+#footer {
+  background-color: #23395b;
+  color: white;
+  text-align: center;
+  padding: 0; /* Remove extra padding */
+  height: 75px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  font-size: 14px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}

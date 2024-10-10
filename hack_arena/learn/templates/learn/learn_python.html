@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Learn{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/learn_python.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div id="topic">
+        <p>Learn Python</p>
+    </div>
+    <div id="des1">
+        <h3>What is Python?</h3>
+        <p>Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.
+            It is used for:</p>
+        <ul>
+            <li>web development (server-side),</li>
+            <li>software development,</li>
+            <li>mathematics,</li>
+            <li>system scripting.</li>
+        </ul>
+        <h3>What can Python do?</h3>
+        <ul>
+            <li>
+                Python can be used on a server to create web applications.
+            </li>
+            <li>Python can be used alongside software to create workflows.</li>
+            <li>Python can connect to database systems. It can also read and modify files.</li>
+            <li>Python can be used to handle big data and perform complex mathematics.</li>
+            <li>Python can be used for rapid prototyping, or for production-ready software development.</li>
+        </ul>
+    </div>
+    <div class="des2">
+        <h3>Your First Python Program</h3>
+        <p>The following program displays <b>Hello, World!</b> on the screen.</p>
+        <img src="img2/python hello.png" alt="">
+        <h3>Output</h3>
+        <img src="img2/hello out.png" alt="">
+
+    </div>
+
+    <div class="des2">
+     <h3>Python if...else Statement</h3>
+     <p>In computer programming, the if statement is a conditional statement. It is used to execute a block of code only when a specific condition is met. For example,
+
+        Suppose we need to assign different grades to students based on their scores.</p>
+        <ul>
+            <li>If a student scores above 90, assign grade A</li>
+            <li>If a student scores above 75, assign grade B</li>
+            <li>If a student scores above 65, assign grade C</li>
+        </ul>
+        <p>These conditional tasks can be achieved using the if statement.</p>
+        <h3>Python if Statement</h3>
+        <p>An if statement can have an optional else clause. The else statement executes if the condition in the if statement evaluates to False.</p>
+        <h3>Example: Python if else Statement</h3>
+        <img src="img2/if else syntax.png" alt="">
+        <img src="img2/if else python.png" alt="">
+        <h3>Example</h3>
+        <img src="img2/if else example.png" alt="">
+        <h3>Output</h3>
+        <img src="img2/if else output.png" alt="">
+    </div>
+    <div class="des2">
+        <h3>Python for Loop</h3>
+        <p>
+            In computer programming, a for loop is a control flow statement that allows a programmer to iterate over a sequence of values. It is used to repeat a block of code a certain number of times or until a specific condition is met.
+        </p>
+        <h3>Example</h3>
+        <img src="img2/for loop py.png" alt="">
+        <h3>Output</h3>
+        <img src="img2/for out.png" alt="">
+    </div>
+    <button type="button" id="btn">Next Page</button>
+    
+    <footer id="footer">
+        <p style="color: white;">Copyright © 2024 HackArena. All rights reserved</p>
+      </footer>
+
+{% endblock %}

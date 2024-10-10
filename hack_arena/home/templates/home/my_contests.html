@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}My Profile{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/my_home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="user-content">
+        <div id="left">
+            <img  id="avatar" src="{% static 'img/code_avatar.jpg' %}" alt="">
+            <div id="user-info">
+                <h1>{{ user.username }}</h1>
+                <p>{{ user.email}}</p>
+                <p id="date-joined" style=""><b>Date Joined :</b> {{ user.date_joined}}</p>
+
+            </div>
+
+        </div>
+        <div id="right">
+            <p>Problems Solved:<span style="color: rgb(58, 194, 58)"> {{ solved_count }}</span></p>
+            <p>Attempted:  <span style="color: red"> {{ attempts }}</span></p>
+            <p>Contest Participated:  <span style="color: rgb(58, 194, 58)"> {{ contest_count }}</span></p>
+
+        </div>
+    </div>
+    <div id="navigation">
+        <span id="leaderboard"><a href="{% url 'my_home' request.user.username %}">Submissions</a></span>
+        <span id="problemset"><a href="{% url 'my_contests' request.user.username %}">Contests</a></span>
+    </div>
+    <div id="submission-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Contest Name</th>
+                    <th>Date</th>
+                    <th>Host</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contest in contests %}
+                    <tr>
+                        <td>{{ contest.name }}</td>
+                        <td>{{ contest.start_time }}</td>
+                        <td>{{ contest.host }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+{% endblock %}

@@ -1,0 +1,179 @@
+* {
+  font-family: Poppins;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+}
+#content {
+  width: 90vw;
+  min-height: 100vh;
+  background-color: #dae1ec;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  border-radius: 25px;
+}
+#topbar {
+  background-color: #252c37;
+  height: 60px;
+  width: 100%;
+  padding: 12px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+#topbar ul {
+  list-style-type: none; /* Remove bullet points */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Flexbox layout for horizontal alignment */
+  /* justify-content: space-between; Space items evenly */
+  /* align-items: center; Vertically center items */
+}
+.left {
+  display: flex; /* Keep left items together */
+  padding-top: 6px;
+  margin-left: 30px;
+}
+
+.right {
+  margin-left: 820px;
+}
+
+#code-form {
+  display: flex; /* Aligns the select and buttons horizontally */
+  align-items: center; /* Vertically centers the form elements */
+}
+#language {
+  margin-left: 5px;
+  width: 200px;
+  height: 35px;
+  border-radius: 20px;
+  padding-left: 20px;
+  margin-right: 20px;
+  font-size: 14px;
+}
+#code-form select {
+  margin-right: 15px; /* Adds space between the dropdown and the buttons */
+  padding: 5px; /* Styling for the select dropdown */
+  padding-left: 10px;
+  width: 200px;
+  background-color: #1b1212;
+  color: #ffffff;
+  border-radius: 15px;
+}
+
+#code-form button {
+  width: 90px;
+  height: 35px;
+  border-radius: 20px;
+}
+
+#run-btn {
+  background-color: #252c37;
+  border: 1px solid #fff9f9;
+  color: #ffffff;
+}
+
+#submit-btn {
+  margin-left: 10px;
+  background-color: #226a00;
+  color: #ffffff;
+  border: none;
+}
+#topbar li {
+  margin-right: 20px; /* Add space between the items */
+}
+#topbar a {
+  color: #ffffff;
+}
+
+#topbar select {
+  padding: 5px; /* Optional: Styling for the select dropdown */
+  padding-left: 10px;
+  width: 200px;
+  background-color: #1b1212;
+  color: #ffffff;
+  border-radius: 15px;
+}
+#lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#statement {
+  flex: 1;
+  max-width: 60%;
+  height: 650px;
+  text-wrap: wrap;
+  padding: 20px;
+  margin-left: 15px;
+}
+#description {
+  margin-top: 20px;
+}
+#problem-title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#statement h4 {
+  margin-top: 30px;
+}
+#statement ul {
+  margin-left: 20px;
+}
+#statement li {
+  margin-top: 10px;
+}
+#io {
+  width: 800px;
+  height: 220px;
+  background-color: #252c37;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+#io-heading {
+  display: flex;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 5px;
+}
+#io-heading h5 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 400;
+}
+#heading-input {
+  margin-left: 15px;
+}
+#heading-output {
+  margin-left: 300px;
+}
+#io-contents {
+  display: flex;
+  margin-top: 10px;
+}
+#problem_inputs h5,
+#problem_inputs p {
+  margin-left: 15px;
+  color: #ffffff;
+}
+#problem_outputs {
+  margin-left: 335px;
+  color: #ffffff;
+}
+#editor {
+  font-family: "Courier New", Courier, monospace; /* Monospace fonts are recommended */
+  flex: 1; /* Allow #editor to take up available space */
+  max-width: 35%;
+  height: 650px;
+  font-size: 16px; /* Adjust this to match your website's text size */
+  line-height: 1.5; /* Ensure proper line height */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* This ensures no extra space is added inside the editor */
+}

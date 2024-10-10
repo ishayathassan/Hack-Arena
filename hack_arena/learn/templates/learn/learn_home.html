@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Learn{% endblock %}
+
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/learn_home.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 style="margin-left:-50px" class="open_text">Tutorials</h1>
+
+  <div id="card_container">
+    <div style="margin-left: 30px;" id="row">
+      <div class="card">
+        <img src="{% static 'img/c++.png' %}" alt="" style="margin: 5px 0 0 10px;">
+        <a href="{% url 'cpp_home' %}" style="padding-left: 22px; padding-top:10px; text-decoration: none; font-size:13px;" id="btn3">Start Here</a>
+        <p style="color:black; margin: 20px 0 0 11px ;">Build a strong foundation in <b>C++</b> with our concise and
+          practical tutorials.</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/python.png' %}" alt="" style="margin: 5px 0 0 10px;">
+        <a href="{% url 'python_home' %}" style="padding-left: 22px; padding-top:10px; text-decoration: none; font-size:13px;" id="btn3">Start Here</a>
+        <p style="color:black; margin: 20px 0 0 11px ;">Dive into <b>Python</b> and master its versatile applications with
+          our focused lessons.</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/Js.png' %}" alt="" style="margin: 5px 0 0 10px;">
+        <button id="btn3">Start Here</button>
+        <p style="color:black; margin: 20px 0 0 11px ;">Learn <b>JavaScript</b> essentials to create dynamic and
+          interactive web pages.</p>
+      </div>
+    </div>
+    <div style="margin-left: 30px;" id="row">
+      <div class="card">
+        <img src="{% static 'img/binary-tree 1.png' %}" alt="" style="margin: 5px 0 0 10px;">
+        <button id="btn3">Start Here</button>
+        <p style="color:black; margin: 20px 0 0 11px ;">Understand and implement essential <b>data structures</b> to
+          optimize your code.</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/computer.png' %}" alt="" style="margin: 5px 0 0 10px;">
+        <button id="btn3">Start Here</button>
+        <p style="color:black; margin: 20px 0 0 11px ;">Master key <b>algorithms</b> to solve complex problems
+          efficiently.
+        </p>
+      </div>
+      <div class="card">
+        <img src="{% static 'img/sql.png' %}" alt="" style="margin: 5px 0 0 10px;">
+        <button id="btn3">Start Here</button>
+        <p style="color:black; margin: 20px 0 0 11px ;">Learn to manage and query databases with essential <b>SQL</b>
+          skills.</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

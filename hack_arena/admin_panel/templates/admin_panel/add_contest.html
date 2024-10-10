@@ -1,0 +1,238 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Host a Contest</title>
+    <link rel="stylesheet" href="{% static 'css/add_problem.css' %}">
+</head>
+<body>
+    <div id="contest-form-container">
+        <h1>Host a Programming Contest</h1>
+
+       <form id="contest-form" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="contest-name">Contest Name:</label>
+                <input type="text" id="contest-name" name="contest_name" placeholder="Enter contest name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contest-description">Description:</label>
+                <textarea id="contest-description" name="contest_description" placeholder="Enter contest description" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="contest-date">Date:</label>
+                <input type="date" id="contest-date" name="contest_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contest-time">Start Time:</label>
+                <input type="time" id="contest-time" name="contest_time" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contest-password">Password (if required):</label>
+                <input type="password" id="contest-password" name="contest_password" placeholder="Enter contest password (optional)">
+            </div>
+
+            <h2>Problem Set</h2>
+
+            <!-- Problem 1 -->
+            <div class="problem-set">
+                <h3>Problem 1</h3>
+
+                <div class="form-group">
+                    <label for="problem1-label">Problem Label:</label>
+                    <input type="text" id="problem1-label" name="problem1_label" placeholder="Enter problem label" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem1-number">Problem Number:</label>
+                    <input type="text" id="problem1-number" name="problem1_number" placeholder="Enter problem number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem1-description">Problem Description:</label>
+                    <textarea id="problem1-description" name="problem1_description" placeholder="Enter problem description" rows="6" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem1-time-limit">Time Limit (in minutes):</label>
+                    <input type="number" id="problem1-time-limit" name="problem1_time_limit" placeholder="Enter time limit in minutes" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem1-memory-limit">Memory Limit (in MB):</label>
+                    <input type="number" id="problem1-memory-limit" name="problem1_memory_limit" placeholder="Enter memory limit" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem1-input">Input Format:</label>
+                    <textarea id="problem1-input" name="problem1_input" placeholder="Enter input format" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem1-output">Output Format:</label>
+                    <textarea id="problem1-output" name="problem1_output" placeholder="Enter output format" rows="4" required></textarea>
+                </div>
+
+                <h4>Test Cases</h4>
+
+                <div class="test-case">
+                    <label for="problem1-testcase1-input">Test Case 1 Input:</label>
+                    <textarea id="problem1-testcase1-input" name="problem1_testcase1_input" placeholder="Enter test case input" rows="3" required></textarea>
+                    <label for="problem1-testcase1-output">Test Case 1 Output:</label>
+                    <textarea id="problem1-testcase1-output" name="problem1_testcase1_output" placeholder="Enter test case output" rows="3" required></textarea>
+                </div>
+
+                <div class="test-case">
+                    <label for="problem1-testcase2-input">Test Case 2 Input:</label>
+                    <textarea id="problem1-testcase2-input" name="problem1_testcase2_input" placeholder="Enter test case input" rows="3" required></textarea>
+                    <label for="problem1-testcase2-output">Test Case 2 Output:</label>
+                    <textarea id="problem1-testcase2-output" name="problem1_testcase2_output" placeholder="Enter test case output" rows="3" required></textarea>
+                </div>
+
+                <div class="test-case">
+                    <label for="problem1-testcase3-input">Test Case 3 Input:</label>
+                    <textarea id="problem1-testcase3-input" name="problem1_testcase3_input" placeholder="Enter test case input" rows="3" required></textarea>
+                    <label for="problem1-testcase3-output">Test Case 3 Output:</label>
+                    <textarea id="problem1-testcase3-output" name="problem1_testcase3_output" placeholder="Enter test case output" rows="3" required></textarea>
+                </div>
+            </div>
+
+            <!-- Problem 2 -->
+            <div class="problem-set">
+                <h3>Problem 2</h3>
+
+                <div class="form-group">
+                    <label for="problem2-label">Problem Label:</label>
+                    <input type="text" id="problem2-label" name="problem2_label" placeholder="Enter problem label" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem2-number">Problem Number:</label>
+                    <input type="text" id="problem2-number" name="problem2_number" placeholder="Enter problem number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem2-description">Problem Description:</label>
+                    <textarea id="problem2-description" name="problem2_description" placeholder="Enter problem description" rows="6" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem2-time-limit">Time Limit (in minutes):</label>
+                    <input type="number" id="problem2-time-limit" name="problem2_time_limit" placeholder="Enter time limit in minutes" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem2-memory-limit">Memory Limit (in MB):</label>
+                    <input type="number" id="problem2-memory-limit" name="problem2_memory_limit" placeholder="Enter memory limit" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem2-input">Input Format:</label>
+                    <textarea id="problem2-input" name="problem2_input" placeholder="Enter input format" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem2-output">Output Format:</label>
+                    <textarea id="problem2-output" name="problem2_output" placeholder="Enter output format" rows="4" required></textarea>
+                </div>
+
+                <h4>Test Cases</h4>
+
+                <div class="test-case">
+                    <label for="problem2-testcase1-input">Test Case 1 Input:</label>
+                    <textarea id="problem2-testcase1-input" name="problem2_testcase1_input" placeholder="Enter test case input" rows="3" required></textarea>
+                    <label for="problem2-testcase1-output">Test Case 1 Output:</label>
+                    <textarea id="problem2-testcase1-output" name="problem2_testcase1_output" placeholder="Enter test case output" rows="3" required></textarea>
+                </div>
+
+                <div class="test-case">
+                    <label for="problem2-testcase2-input">Test Case 2 Input:</label>
+                    <textarea id="problem2-testcase2-input" name="problem2_testcase2_input" placeholder="Enter test case input" rows="3" required></textarea>
+                    <label for="problem2-testcase2-output">Test Case 2 Output:</label>
+                    <textarea id="problem2-testcase2-output" name="problem2_testcase2_output" placeholder="Enter test case output" rows="3" required></textarea>
+                </div>
+
+                <div class="test-case">
+                    <label for="problem2-testcase3-input">Test Case 3 Input:</label>
+                    <textarea id="problem2-testcase3-input" name="problem2_testcase3_input" placeholder="Enter test case input" rows="3" required></textarea>
+                    <label for="problem2-testcase3-output">Test Case 3 Output:</label>
+                    <textarea id="problem2-testcase3-output" name="problem2_testcase3_output" placeholder="Enter test case output" rows="3" required></textarea>
+                </div>
+            </div>
+
+            <!-- Problem 3 -->
+            <div class="problem-set">
+                <h3>Problem 3</h3>
+
+                <div class="form-group">
+                    <label for="problem3-label">Problem Label:</label>
+                    <input type="text" id="problem3-label" name="problem3_label" placeholder="Enter problem label" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem3-number">Problem Number:</label>
+                    <input type="text" id="problem3-number" name="problem3_number" placeholder="Enter problem number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem3-description">Problem Description:</label>
+                    <textarea id="problem3-description" name="problem3_description" placeholder="Enter problem description" rows="6" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem3-time-limit">Time Limit (in minutes):</label>
+                    <input type="number" id="problem3-time-limit" name="problem3_time_limit" placeholder="Enter time limit in minutes" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem3-memory-limit">Memory Limit (in MB):</label>
+                    <input type="number" id="problem3-memory-limit" name="problem3_memory_limit" placeholder="Enter memory limit" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem3-input">Input Format:</label>
+                    <textarea id="problem3-input" name="problem3_input" placeholder="Enter input format" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="problem3-output">Output Format:</label>
+                    <textarea id="problem3-output" name="problem3_output" placeholder="Enter output format" rows="4" required></textarea>
+                </div>
+
+                <h4>Test Cases</h4>
+
+                <div class="test-case">
+                    <label for="problem3-testcase1-input">Test Case 1 Input:</label>
+                    <textarea id="problem3-testcase1-input" name="problem3_testcase1_input" placeholder="Enter test case input" rows="3" required></textarea>
+                    <label for="problem3-testcase1-output">Test Case 1 Output:</label>
+                    <textarea id="problem3-testcase1-output" name="problem3_testcase1_output" placeholder="Enter test case output" rows="3" required></textarea>
+                </div>
+
+                <div class="test-case">
+                    <label for="problem3-testcase2-input">Test Case 2 Input:</label>
+                    <textarea id="problem3-testcase2-input" name="problem3_testcase2_input" placeholder="Enter test case input" rows="3" required></textarea>
+                    <label for="problem3-testcase2-output">Test Case 2 Output:</label>
+                    <textarea id="problem3-testcase2-output" name="problem3_testcase2_output" placeholder="Enter test case output" rows="3" required></textarea>
+                </div>
+
+                <div class="test-case">
+                    <label for="problem3-testcase3-input">Test Case 3 Input:</label>
+                    <textarea id="problem3-testcase3-input" name="problem3_testcase3_input" placeholder="Enter test case input" rows="3" required></textarea>
+                    <label for="problem3-testcase3-output">Test Case 3 Output:</label>
+                    <textarea id="problem3-testcase3-output" name="problem3_testcase3_output" placeholder="Enter test case output" rows="3" required></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Create Problem</button>
+
+        </form>
+    </div>
+</body>
+</html>

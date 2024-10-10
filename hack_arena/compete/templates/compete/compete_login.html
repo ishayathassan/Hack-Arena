@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Practice{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/compete_login.css'%}">
+{% endblock %}
+{% block content %}
+    <div id="content">
+        <div id="topbar">
+            <span id="left">
+                <span id="logo"></span>
+                    <img src="{% static 'img/gold-trophy-cartoon-illustration-isolated-object-free-vector-removebg-preview 1.png' %}" alt="">
+                </span>
+                <span id="title"><h2>{{ contest.name }}</h2></span>
+            </span>
+            <span id="organized-by">
+                <h4>Organized by:</h4>
+                <p style="color: #4F6D9C; font-weight:600;">{{ contest.host }}</p>
+            </span>
+        </div>
+        <div id="description">
+            <p>{{ contest.details }}</p>
+        </div>
+        <div id="login-form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div id="password_div">
+                    <label for="password">Password</label>
+                    <input style="margin-left:7px" type="password" name="password" placeholder="Password">
+                </div>
+                <button id="btn-enter">Enter</button></div>
+                
+            </form>
+        </div>
+    </div>
+{% endblock%}

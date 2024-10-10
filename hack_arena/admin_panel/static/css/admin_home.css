@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    color: white;
+  }
+  body{
+    overflow-x: hidden;
+  }
+  #nav1{
+    height: 75px;
+    width: 100vw;
+    background-color: #23395B;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    
+  }
+  #nav_left{
+      float: left;
+      width: 40%;
+      height: 75px;
+     
+  }
+  #nav_left a{
+      display: block;
+      color: white;
+      text-align: center;
+      margin: 20px ;
+      text-decoration: none;
+      margin-right: 120px;
+  }
+  
+  
+  #nav_mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 75px;
+    margin: 0 auto; 
+    
+  }
+  
+
+  
+  .title1{
+    color: white;
+    text-decoration: none;
+    margin-left: 40px; /* Horizontal space between links */ 
+  }
+  
+  #nav_right{
+    margin-left: 300px;
+    float: right;
+  }
+
+
+#container {
+    display: flex;
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+/* Profile card styling */
+#profile_card {
+    width: 504px;
+    height: 550px;
+    background-color: #DAE1EC;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    margin-bottom: 40px; 
+}
+
+#profile_pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    margin-top: -150px;
+}
+
+#info {
+    text-align: center;
+    margin-top: 70px;
+}
+
+#info p {
+    margin: 5px 0;
+    font-size: 22px;
+    font-weight: bold;
+    color: #0A254F;
+}
+
+/* Right side rectangular cards */
+#right_btns {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    
+}
+
+.btn {
+    width: 600px;
+    height: 120px;
+    background-color: #DAE1EC;
+    border: none; /* Remove any border */
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 40px;
+    cursor: pointer; /* Change cursor to pointer when hovering */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn:hover {
+    background-color: #23395B; /* Change background color on hover */
+}
+
+#footer {
+    background-color: #23395B;
+    color: white;
+    text-align: center;
+    padding: 0; /* Remove extra padding */
+    height: 75px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    font-size: 14px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+  }

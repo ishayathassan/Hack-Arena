@@ -1,0 +1,66 @@
+li {
+  list-style-type: none;
+}
+#timer {
+  margin-left: 280px;
+  margin-top: 60px;
+  color: #4f6d9c;
+  font-size: 22px;
+}
+#time {
+  color: #e7415f;
+}
+#navigation {
+  margin-left: 280px;
+  margin-top: 60px;
+}
+#navigation span {
+  background-color: #dae1ec;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 20px;
+}
+#contest {
+  background-color: #dae1ec;
+  width: 73vw;
+  margin-left: 280px;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-radius: 25px;
+  flex-basis: 25%;
+}
+#list-header {
+  padding-top: 20px;
+}
+#list-header ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  display: flex; /* Use Flexbox to align items horizontally */
+}
+#list-header li {
+  flex: 1; /* Distribute space equally between headings */
+  text-align: center; /* Center-align the text */
+  padding: 10px 0; /* Add some padding inside each heading */
+}
+#list-header h2 {
+  font-weight: 500;
+}
+.contestent-row {
+  margin-top: 10px;
+}
+.contestent-row ul {
+  display: flex;
+}
+
+.contestent-row li {
+  flex: 1;
+  text-align: center;
+  padding: 10px 0;
+}
+.contestent-row:nth-child(even) {
+  background-color: #f0f0f0;
+}
